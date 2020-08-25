@@ -2,6 +2,8 @@ package com.fengshui.tomatomod;
 
 import com.fengshui.tomatomod.init.BlockList;
 import com.fengshui.tomatomod.init.ItemList;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -57,7 +59,9 @@ public class Main
 
     private void setup(final FMLCommonSetupEvent event) { }
 
-    private void doClientStuff(final FMLClientSetupEvent event) { }
+    private void doClientStuff(final FMLClientSetupEvent event) {
+        RenderTypeLookup.setRenderLayer(BlockList.TOMATO_CROP.get(), RenderType.getCutout());
+    }
 
     public static class ModItemGroup extends ItemGroup {
 
@@ -67,7 +71,7 @@ public class Main
 
         @Override
         public ItemStack createIcon() {
-            return new ItemStack(ItemList.MODDING_TOOL.get());
+            return new ItemStack(ItemList.TOMATO.get());
         }
 
     }
