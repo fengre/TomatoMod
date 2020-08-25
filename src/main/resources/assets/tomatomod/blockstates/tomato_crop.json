@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "age=0": { "model": "tomatomod:block/tomato_stage0" },
+    "age=1": { "model": "tomatomod:block/tomato_stage1" },
+    "age=2": { "model": "tomatomod:block/tomato_stage2" },
+    "age=3": { "model": "tomatomod:block/tomato_stage2" },
+    "age=4": { "model": "tomatomod:block/tomato_stage3" },
+    "age=5": { "model": "tomatomod:block/tomato_stage4" },
+    "age=6": { "model": "tomatomod:block/tomato_stage4" },
+    "age=7": { "model": "tomatomod:block/tomato_stage5" }
+  }
+}

@@ -71,7 +71,7 @@ public class Main
 
         @Override
         public ItemStack createIcon() {
-            return new ItemStack(ItemList.MODDING_TOOL.get());
+            return new ItemStack(ItemList.TOMATO.get());
         }
 
     }

@@ -1,0 +1,6 @@
+{
+  "parent": "tomatomod:block/cross_crop",
+  "textures": {
+    "cross_crop": "tomatomod:blocks/tomato_stage2"
+  }
+}
