@@ -2,6 +2,7 @@ package com.fengshui.tomatomod.init;
 
 import com.fengshui.tomatomod.Main;
 import com.fengshui.tomatomod.items.ModdingToolItem;
+import com.fengshui.tomatomod.items.TomatoItem;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Food;
 import net.minecraft.item.Item;
@@ -20,6 +21,6 @@ public class ItemList {
                     new Item.Properties().group(Main.TAB)));
 
     public static final RegistryObject<Item> TOMATO = ITEMS.register("tomato",
-            () -> new Item(new Item.Properties().group(Main.TAB)
+            () -> new TomatoItem(new Item.Properties().group(Main.TAB)
                     .food(new Food.Builder().hunger(4).saturation(3.0f).build())));
 }
