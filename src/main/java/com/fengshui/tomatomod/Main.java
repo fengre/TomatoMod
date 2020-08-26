@@ -2,6 +2,8 @@ package com.fengshui.tomatomod;
 
 import com.fengshui.tomatomod.init.BlockList;
 import com.fengshui.tomatomod.init.ItemList;
+import com.fengshui.tomatomod.world.gen.Generation;
+import net.minecraft.block.ComposterBlock;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.item.BlockItem;
@@ -12,6 +14,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -38,29 +41,20 @@ public class Main
 
         ItemList.ITEMS.register(modEventBus);
         BlockList.BLOCKS.register(modEventBus);
-        BlockList.NO_ITEM_BLOCKS.register(modEventBus);
 
         instance = this;
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-    @SubscribeEvent
-    public static void createBlockItems(final RegistryEvent.Register<Item> event) {
-        final IForgeRegistry<Item> registry = event.getRegistry();
-
-        BlockList.BLOCKS.getEntries().stream().map(RegistryObject::get).forEach(block -> {
-            final Item.Properties properties = new Item.Properties().group(TAB);
-            final BlockItem blockItem = new BlockItem(block, properties);
-            blockItem.setRegistryName(block.getRegistryName());
-            registry.register(blockItem);
-        });
-
+    private void setup(final FMLCommonSetupEvent event) {
+        ComposterBlock.CHANCES.put(ItemList.TOMATO.get(), 0.65F);
+        ComposterBlock.CHANCES.put(ItemList.TOMATO_SEEDS.get(), 0.3F);
+        Generation.generateTomato();
     }
-
-    private void setup(final FMLCommonSetupEvent event) { }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
         RenderTypeLookup.setRenderLayer(BlockList.TOMATO_CROP.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(BlockList.WILD_TOMATO_PLANT.get(), RenderType.getCutout());
     }
 
     public static class ModItemGroup extends ItemGroup {
