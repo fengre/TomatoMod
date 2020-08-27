@@ -12,7 +12,11 @@ import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.world.FoliageColors;
+import net.minecraft.world.GrassColors;
+import net.minecraft.world.biome.BiomeColors;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.ColorHandlerEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -49,6 +53,16 @@ public class Main
 
         instance = this;
         MinecraftForge.EVENT_BUS.register(this);
+    }
+
+    @SubscribeEvent
+    public static void registerBlockColors(ColorHandlerEvent.Block event) {
+        event.getBlockColors().register((state, world, pos, index) -> {
+            if (world == null || pos == null) {
+                return FoliageColors.getDefault();
+            }
+            return BiomeColors.getGrassColor(world, pos);
+        }, BlockList.WILD_TOMATO_PLANT.get());
     }
 
     private void setup(final FMLCommonSetupEvent event) {
