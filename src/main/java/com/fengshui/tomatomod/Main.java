@@ -45,7 +45,6 @@ public class Main
 
         ItemList.ITEMS.register(modEventBus);
         BlockList.BLOCKS.register(modEventBus);
-        BlockList.NO_ITEM_BLOCKS.register(modEventBus);
         EntityList.ENTITY_TYPES.register(modEventBus);
 
         instance = this;
