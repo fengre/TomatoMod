@@ -1,5 +1,6 @@
 {
   "itemGroup.mod_group": "Mod Items",
   "block.tomatomod.tomato_crop": "Tomato Seeds",
-  "item.tomatomod.tomato": "Tomato"
+  "item.tomatomod.tomato": "Tomato",
+  "item.tomatomod.tomato_soup": "Tomato Soup"
 }
