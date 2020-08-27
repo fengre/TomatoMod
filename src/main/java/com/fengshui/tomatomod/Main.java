@@ -4,6 +4,8 @@ import com.fengshui.tomatomod.client.RenderTomatoFactory;
 import com.fengshui.tomatomod.init.EntityList;
 import com.fengshui.tomatomod.init.BlockList;
 import com.fengshui.tomatomod.init.ItemList;
+import com.fengshui.tomatomod.world.gen.Generation;
+import net.minecraft.block.ComposterBlock;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.item.BlockItem;
@@ -15,6 +17,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.DeferredWorkQueue;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
@@ -49,23 +52,15 @@ public class Main
         MinecraftForge.EVENT_BUS.register(this);
     }
 
-    @SubscribeEvent
-    public static void createBlockItems(final RegistryEvent.Register<Item> event) {
-        final IForgeRegistry<Item> registry = event.getRegistry();
-
-        BlockList.BLOCKS.getEntries().stream().map(RegistryObject::get).forEach(block -> {
-            final Item.Properties properties = new Item.Properties().group(TAB);
-            final BlockItem blockItem = new BlockItem(block, properties);
-            blockItem.setRegistryName(block.getRegistryName());
-            registry.register(blockItem);
-        });
-
+    private void setup(final FMLCommonSetupEvent event) {
+        ComposterBlock.CHANCES.put(ItemList.TOMATO.get(), 0.65F);
+        ComposterBlock.CHANCES.put(ItemList.TOMATO_SEEDS.get(), 0.3F);
+        Generation.generateTomato();
     }
-
-    private void setup(final FMLCommonSetupEvent event) { }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
         RenderTypeLookup.setRenderLayer(BlockList.TOMATO_CROP.get(), RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(BlockList.WILD_TOMATO_PLANT.get(), RenderType.getCutout());
         RenderingRegistry.registerEntityRenderingHandler(EntityList.TOMATO.get(), new RenderTomatoFactory());
     }
 
