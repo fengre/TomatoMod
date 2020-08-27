@@ -1,6 +1,8 @@
 package com.fengshui.tomatomod.blocks;
 
 import net.minecraft.block.*;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.shapes.ISelectionContext;
@@ -21,5 +23,9 @@ public class WildTomatoBushBlock extends BushBlock{
 
     public Block.OffsetType getOffsetType() {
         return Block.OffsetType.XYZ;
+    }
+
+    public ItemStack getItem(IBlockReader worldIn, BlockPos pos, BlockState state) {
+        return new ItemStack(Items.GRASS);
     }
 }
