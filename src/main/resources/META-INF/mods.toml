@@ -1,23 +1,25 @@
-modLoader="javafml" #mandatory
-loaderVersion="[31,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
-#issueTrackerURL="http://my.issue.tracker/" #optional
-[[mods]] #mandatory
+modLoader="javafml"
+loaderVersion="[31,)"
+issueTrackerURL="https://github.com/fengre/TomatoMod/issues"
 
-modId="tomatomod" #mandatory
-version="1.15.2-1.0.0" #mandatory
-displayName="Tomato Mod" #mandatory
-
-#updateJSONURL="http://myurl.me/" #optional
-#displayURL="http://example.com/" #optional
-logoFile="examplemod.png" #optional
-credits="Creds to the team and our big brains" #optional
-authors="Feng + Shui" #optional
+[[mods]]
+modId="tomatomod"
+version="1.15.2-1.0.0"
+displayName="TomatoMod"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/tomatomod"
+logoFile="tomatomod.png"
+credits="Creds to the authors"
+authors="Fengre + Shuiax"
 
 description='''
-TEMPLATE
+This mod adds tomatoes to the game.
+
+Grow your tomatoes. Throw your tomatoes. Eat your tomatoes. Compost your tomatoes. Live with tomatoes.
+
+Life without tomatoes ain't a good life.
 '''
 
-[[dependencies.examplemod]] #optional
+[[dependencies.tomatomod]] #optional
     # the modid of the dependency
     modId="forge" #mandatory
     # Does this dependency have to exist - if not, ordering below must be specified
@@ -29,7 +31,7 @@ TEMPLATE
     # Side this dependency is applied on - BOTH, CLIENT or SERVER
     side="BOTH"
 
-[[dependencies.examplemod]]
+[[dependencies.tomatomod]]
     modId="minecraft"
     mandatory=true
     versionRange="[1.15.2]"
