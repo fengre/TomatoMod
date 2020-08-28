@@ -6,18 +6,13 @@ issueTrackerURL="https://github.com/fengre/TomatoMod/issues"
 modId="tomatomod"
 version="1.15.2-1.0.0"
 displayName="TomatoMod"
-displayURL="https://www.curseforge.com/minecraft/mc-mods/tomatomod"
+#displayURL="https://www.curseforge.com/minecraft/mc-mods/tomatomod"
 logoFile="tomatomod.png"
 credits="Creds to the authors"
 authors="Fengre + Shuiax"
 
 description='''
-This mod adds tomatoes to the game.
-
-Grow your tomatoes. Throw your tomatoes. Eat your tomatoes. Compost your tomatoes. Live with tomatoes.
-
-Life without tomatoes ain't a good life.
-'''
+Grow your tomatoes. Throw your tomatoes. Eat your tomatoes.'''
 
 [[dependencies.tomatomod]] #optional
     # the modid of the dependency
