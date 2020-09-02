@@ -4,7 +4,7 @@ issueTrackerURL="https://github.com/fengre/TomatoMod/issues"
 
 [[mods]]
 modId="tomatomod"
-version="1.15.2-1.0.0"
+version="1.15.2-1.0.1"
 displayName="TomatoMod"
 #displayURL="https://www.curseforge.com/minecraft/mc-mods/tomatomod"
 logoFile="tomatomod.png"
