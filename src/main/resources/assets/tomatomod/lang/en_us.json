@@ -1,6 +1,7 @@
 {
   "itemGroup.mod_group": "TomatoMod",
-  "block.tomatomod.tomato_crop": "Tomato Seeds",
+  "block.tomatomod.tomato_crop": "Tomato Crop",
+  "item.tomatomod.tomato_seeds": "Tomato Seeds",
   "item.tomatomod.tomato": "Tomato",
   "item.tomatomod.tomato_soup": "Tomato Soup",
   "block.tomatomod.wild_tomato_plant": "Grass"

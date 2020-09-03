@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "tomatomod:tomato_crop"
+          "name": "tomatomod:tomato_seeds"
         }
       ],
       "conditions": [

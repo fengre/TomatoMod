@@ -23,8 +23,8 @@
                 {
                   "function": "minecraft:set_count",
                   "count": {
-                    "min": 2,
-                    "max": 4
+                    "min": 1,
+                    "max": 3
                   }
                 },
                 {
@@ -36,10 +36,6 @@
                   }
                 }
               ]
-            },
-            {
-              "type": "minecraft:item",
-              "name": "tomatomod:tomato_crop"
             }
           ]
         }
@@ -56,12 +52,12 @@
               "enchantment": "minecraft:fortune",
               "formula": "minecraft:binomial_with_bonus_count",
               "parameters": {
-                "extra": 3,
+                "extra": 1,
                 "probability": 0.5714286
               }
             }
           ],
-          "name": "tomatomod:tomato_crop"
+          "name": "tomatomod:tomato_seeds"
         }
       ],
       "conditions": [
